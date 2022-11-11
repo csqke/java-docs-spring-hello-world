@@ -13,8 +13,9 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@RequestMapping("/")
-	String sayHello() {
-		return "Hello World!";
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
 	}
+
 }

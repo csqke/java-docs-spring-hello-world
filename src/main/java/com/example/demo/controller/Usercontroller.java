@@ -60,9 +60,9 @@ public class Usercontroller {
 
     @RequestMapping("/get-by-id/{id}")
     public String getById(@PathVariable(value = "id")Integer id){
-        String url = PROVIDER_URL+"get-by-id";
-        HashMap<String, Integer> paraMap = new HashMap<>();
+       HashMap<String, Integer> paraMap = new HashMap<>();
         paraMap.put("id",id);
+        String url = PROVIDER_URL+"get-by-id"+"?id={id}";
         return restTemplate.getForObject(url, String.class,paraMap);
     }
 }
